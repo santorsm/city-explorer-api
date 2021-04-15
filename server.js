@@ -1,3 +1,5 @@
+'use strict';
+
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
@@ -15,8 +17,22 @@ app.get('/', (request, response) => {
   response.status(200).send('Hello!');
 });
 
-app.get('/weather',(request,response) => {
-  response.json(weatherData);
-})
+  app.get('/weather',(request, response) => {
+    try{
+      const allDailyForecasts = weatherData.data.map(dailyData => new Forecast(dailyData));
+      response.json(allDailyForecasts);
+    } catch(error){
+      errorHandler(error, response);
+    }
+  })
+
+function Forecast(dailyData){
+  this.date = dailyData.datetime;
+  this.description = dailyData.weather.description;
+}
+
+function errorHandler(error, response){
+  response.status(500).send('Internal Error');
+}
 
 app.listen(PORT, () => console.log(`App is listening on port ${PORT}`));
