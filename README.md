@@ -36,3 +36,6 @@ Chance helped me to find my error in calling the movie api
 
 21 April
 Joe helped me to deploy my city explorer app using Heroku & Netlify
+
+22 April 
+Kristian helped me to modularize the backend
