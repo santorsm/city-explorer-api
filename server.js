@@ -68,7 +68,7 @@ function Forecast(dailyData){
 function Movie(movie) {
   this.title = movie.title;
   this.overview = movie.overview;
-  this.image_url = (movie.poster_path) ? `${movie.moviePosterUrl}${movie.poster_path}` : undefined;
+  this.image_url = (movie.poster_path) ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : undefined;
 }
 
 function errorHandler(request, response, error){
