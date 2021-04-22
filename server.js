@@ -25,6 +25,7 @@ app.get('/weather',(request, response) => {
     .query({
       key: process.env.WEATHER_API_KEY,
       units: 'I',
+      days: 5,
       lat: request.query.lat,
       lon: request.query.lon,
     })
@@ -39,7 +40,7 @@ app.get('/movies', movieHandler);
 
 function movieHandler (request, response){
   const key = process.env.MOVIE_API_KEY;
-  const moviePosterUrl = 'https://image.tmdb.org/t/p/w500';
+  // const moviePosterUrl = 'https://image.tmdb.org/t/p/w500';
   const url = `https://api.themoviedb.org/3/search/movie?api_key=${key}`;
   const queryParams = {
     language: 'en-US',

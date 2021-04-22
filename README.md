@@ -14,7 +14,8 @@ Provide users with weather and movie information about a city thye select
 
 ## Change Log
 
-20 Apr 21 - application now receives
+20 Apr 21 - application renders data from weather and receives data from movie apis
+21 Apr 21 - application now renders data from location, weather, and movie apis. SIte has been deployed using Netlify & Heroku
 
 ## Credit and Collaborations
 
@@ -32,3 +33,6 @@ Hexx King walked through my code with me and helped me to get the weather correc
 
 20 April
 Chance helped me to find my error in calling the movie api
+
+21 April
+Joe helped me to deploy my city explorer app using Heroku & Netlify
